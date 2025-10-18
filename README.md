@@ -1,4 +1,4 @@
-# Google Maps Scraper (Selenium)
+# Google Maps Lead Scraper (Selenium)
 
 A reliable **Python-based Google Maps business scraper** built with **Selenium**.  
 It extracts detailed business information — including contact details and social media links — and exports everything to **Excel**.  
@@ -37,7 +37,8 @@ pip install -r requirements.txt
 ```
 
 ## 🖥️ How to Use
-Option 1: Double-click (easy mode)
+
+`Option 1:` Double-click (easy mode)
 
 Run Google_Maps_Lead_Scraper.py directly.
 
@@ -51,17 +52,17 @@ Max results
 
 Page load delay (in seconds)
 
-Option 2: Command Line (advanced)
+`Option 2:` Command Line (advanced)
 
-python Google_Maps_Lead_Scraper.py --query "plumbers in Chicago" --output plumbers.xlsx --max-results 300 --slow 3
+```
+python Google_Maps_Lead_Scraper.py --query "dentist in saskatoon sk canada" --output dentists.xlsx --max-results 200 --slow 3
+```
 
 Optional flags:
 
---headless → Run Chrome without opening a window
-
---max-results → Limit total listings
-
---slow → Increase wait time for slow networks
+- `--headless` to run Chrome without opening a window.
+- `--max-results` to limit total listings processed.
+- `--slow` to increase base wait time if pages load slowly on your network.
 
 📊 Example Output
 
@@ -72,22 +73,21 @@ Example file:
 examples/dentist_in_saskatoon.xlsx
 
 📁 Folder Structure
-Google_Maps_Lead_Scraper.py   → main scraper script
-requirements.txt               → dependencies
-examples/dentist_in_saskatoon.xlsx → sample output
-docs/                          → screenshots folder
-LICENSE                        → MIT License
-README.md                      → documentation
+- `Google_Maps_Lead_Scraper.py`   → main scraper script
+- `requirements.txt`               → dependencies
+- `examples/dentist_in_saskatoon.xlsx` → sample output
+- `docs/`                          → screenshots folder
+- `LICENSE`                        → MIT License
+- `README.md`                      → documentation
 
-⚠️ Notes
+⚠️Notes, Limitations, and Tips
 
-Google’s layout changes frequently; small updates may be needed.
-
-Some listings may lack emails or full info.
-
-webdriver-manager automatically installs the correct ChromeDriver.
-
-Use responsibly and comply with Google’s Terms of Service.
+- Result counts can vary. Google Maps does not guarantee a fixed number of listings for a query; duplicates or hidden listings can reduce totals.
+- Google frequently changes page structure. This scraper uses multiple fallbacks, but updates may be required over time.
+- Email extraction is best-effort by scanning the listed website; not all businesses list an email.
+- If Chrome or ChromeDriver versions change, webdriver-manager will fetch a compatible driver automatically.
+- If you see intermittent timeouts, increase `--slow` (e.g., 3 → 5 or 7).
+- Use responsibly and comply with the terms of the services you access.
 
 🧾 License
 
