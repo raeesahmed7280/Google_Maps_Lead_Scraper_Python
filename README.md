@@ -1,58 +1,47 @@
-Google Maps Scraper (Selenium)
+# Google Maps Scraper (Selenium)
 
-A reliable Python-based Google Maps business scraper built with Selenium. It extracts detailed business information — including contact details and social media links — and exports everything to Excel. The project is tested, easy to use, and ideal for showcasing technical skills or generating business leads.
+A reliable **Python-based Google Maps business scraper** built with **Selenium**.  
+It extracts detailed business information — including contact details and social media links — and exports everything to **Excel**.  
+Perfect for showcasing automation skills or generating real business leads.
 
-Features
+---
 
-Extracts the following:
+## 🚀 Features
 
-Title
+- Extracts:
+  - **Title**
+  - **Rating**
+  - **Reviews count**
+  - **Phone**
+  - **Email** (best-effort from the business website)
+  - **Address**
+  - **Website**
+  - **Facebook, Instagram, LinkedIn, Twitter**
+  - **Google Maps Link**
+- Exports results to **Excel (.xlsx)**
+- Prevents overwriting: saves as `filename_01.xlsx`, `filename_02.xlsx`, etc.
+- Supports **headless mode** (runs Chrome invisibly)
+- Uses **webdriver-manager** to auto-install ChromeDriver
+- Handles multiple Google Maps layouts with smart fallbacks
 
-Rating
+---
 
-Reviews count
+## 🧩 Requirements
 
-Phone
-
-Email (best-effort from business website)
-
-Address
-
-Website
-
-Facebook
-
-Instagram
-
-LinkedIn
-
-Twitter
-
-Google Maps Link
-
-Exports results to Excel (.xlsx)
-
-Automatically saves files as filename_01.xlsx, filename_02.xlsx, etc., to prevent overwriting
-
-Supports headless mode (runs Chrome invisibly)
-
-Uses webdriver-manager to auto-install ChromeDriver
-
-Handles multiple Google Maps layouts with fallback logic
-
-Requirements
-
-Python 3.8 or higher
-
-Google Chrome installed
+- Python **3.8+**
+- **Google Chrome** installed
 
 Install dependencies:
-
+```bash
 pip install -r requirements.txt
+```
 
-How to Use Option 1: Double-click to run
+## 🖥️ How to Use
+Option 1: Double-click (easy mode)
 
-Double-click Google_Maps_Lead_Scraper.py. You’ll be prompted to enter:
+Run Google_Maps_Lead_Scraper.py directly.
+
+You’ll be asked for:
 
 Search query (e.g. dentist in Lahore)
 
@@ -62,54 +51,52 @@ Max results
 
 Page load delay (in seconds)
 
-Option 2: Run from Command Line python Google_Maps_Lead_Scraper.py --query "plumbers in Chicago" --output plumbers.xlsx --max-results 300 --slow 3
+Option 2: Command Line (advanced)
+
+python Google_Maps_Lead_Scraper.py --query "plumbers in Chicago" --output plumbers.xlsx --max-results 300 --slow 3
 
 Optional flags:
 
---headless → Run without showing the browser window
+--headless → Run Chrome without opening a window
 
 --max-results → Limit total listings
 
---slow → Increase wait time for slow connections
+--slow → Increase wait time for slow networks
 
-Example Output
+📊 Example Output
 
-The exported Excel file includes the following columns:
-
+Excel columns:
 Title | Rating | Reviews | Phone | Email | Address | Website | Facebook | Instagram | LinkedIn | Twitter | GoogleMapsLink
 
-Example output file: examples/dentist_in_saskatoon.xlsx
+Example file:
+examples/dentist_in_saskatoon.xlsx
 
-Folder Structure
+📁 Folder Structure
+Google_Maps_Lead_Scraper.py   → main scraper script
+requirements.txt               → dependencies
+examples/dentist_in_saskatoon.xlsx → sample output
+docs/                          → screenshots folder
+LICENSE                        → MIT License
+README.md                      → documentation
 
-Google_Maps_Lead_Scraper.py — main scraper script
+⚠️ Notes
 
-requirements.txt — dependencies
+Google’s layout changes frequently; small updates may be needed.
 
-examples/dentist_in_saskatoon.xlsx — example output
+Some listings may lack emails or full info.
 
-docs/screenshots.png — replace with your own screenshots
+webdriver-manager automatically installs the correct ChromeDriver.
 
-LICENSE — MIT License
+Use responsibly and comply with Google’s Terms of Service.
 
-README.md — documentation
+🧾 License
 
-Notes
+Licensed under the MIT License.
+See the LICENSE
+ file for details.
 
-Results may vary due to Google’s dynamic listings.
-
-Google frequently changes its page layout, which may require small updates.
-
-Email extraction depends on whether a business lists an email publicly.
-
-webdriver-manager automatically downloads the correct ChromeDriver version.
-
-Use responsibly and follow Google’s Terms of Service.
-
-License
-
-MIT License — see LICENSE for details.
-
-Author
+👨‍💻 Author
 
 Created by Raees Ahmed Fazal
+Email: raeesahmed7280@gmail.com
+
